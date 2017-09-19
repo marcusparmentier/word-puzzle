@@ -1,20 +1,27 @@
 //business (backend) logic
 var vowels = ["A", "E", "I", "O", "U", "a", "e", "i", "o", "u"];
 
-// var selectedQuote = [$("p").text("#w1"); $("p").text("#w2");$("p").text("#w3");];
- // for (var index = 0; index <= 2; index += 1) {
- // 		selectedQuote[index].split("").remove(vowels).replace("-");
- // }
-
 //user (frontend) logic
 $(document).ready(function() {
-  var selectedQuote = [$("p#w1").text(),$("p#w2").text(),$("p#w3").text()];
-  console.log(selectedQuote);
+  var quotes = [$("p#w1").text(),$("p#w2").text(),$("p#w3").text()];
+  for (var i = 0; i < quotes.length; i++) {
+    var thisSentence = quotes[i];
+    var sentenceArray = thisSentence.split("");
+    //["a", "b", "c", " ", "d"];
+    vowels.forEach(function(vowel) {
+      sentenceArray.forEach(function(character) {
+        console.log("----------------NEW PAIR----------------");
+        console.log("THE VOWEL IS: " +vowel);
+        console.log("THE CHARACTER IS: "+character);
+        if (vowel === character) {
+          console.log("=========++++++++++++++++++=====THEY MATCH!!!=======++++++++++++++++++=======");
+        }
+      })
+    })
+    // console.log(sentenceArray);
 
+  }
 
-  $("button").click(function() {
-   $("#w1").replace(vowels);
-
-   event.preventDefault();
-  });
+  // $("button").click(function() {
+   //*$("#w1").replace();
 });
